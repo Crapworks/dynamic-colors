@@ -1,4 +1,8 @@
-# dynamic-colors
+# dynamic-colors-256
+
+This is a fork of [sos4nt](https://github.com/sos4nt) [dynamic-colors](https://github.com/sos4nt/dynamic-colors).
+This will not patch the first 16 colors in the color palette (ANSI) but will use the 256 color capability of newer terminal an patch the colors 100-116.
+This will preserve the use of bold/bright ANSI colors
 
 This is a small tool for changing your terminal colors on the fly.
 
