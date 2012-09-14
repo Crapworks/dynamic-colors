@@ -30,26 +30,34 @@ mouse_foreground="$base1"
 highlight="$base02"
 border="$base03"
 
+color0="$base02"  # black
 color100="$base02"  # black
 color108="$base03"  # brblack
 
+color1="$red"     # red
 color101="$red"     # red
 color109="$orange"  # brred
 
+color2="$green"   # green
 color102="$green"   # green
 color110="$base01"  # brgreen
 
+color3="$yellow"  # yellow
 color103="$yellow"  # yellow
 color111="$base00"  # bryellow
 
+color4="$blue"    # blue
 color104="$blue"    # blue
 color112="$base0"   # brblue
 
+color5="$magenta" # magenta
 color105="$magenta" # magenta
 color113="$violet"  # brmagenta
 
+color6="$cyan"    # cyan
 color106="$cyan"    # cyan
 color114="$base1"   # brcyan
 
+color7="$base2"   # white
 color107="$base2"   # white
 color115="$base3"   # brwhite
