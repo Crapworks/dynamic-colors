@@ -104,7 +104,7 @@ set_colors () {
 load_colorscheme () {
   [ ! -f "$COLORSCHEMES/$1.sh" ] && die "error: unknown colorscheme '$1'"
   . "$COLORSCHEMES/$1.sh" # source colorscheme file
-  colors=${!color@}
+  colors="background foreground cursor mouse_background mouse_foreground highlight border ${!color@}"
 }
 
 switch () {
