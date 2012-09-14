@@ -65,9 +65,7 @@ BEL="\007"
 DSC="${ESC}P"
 OSC="${ESC}]"
 
-#colors=( background foreground cursor mouse_background mouse_foreground highlight border color0 color1 color2 color3 color4 color5 color6 color7 color8 color9 color10 color11 color12 color13 color14 color15 )
-colors=( background foreground cursor mouse_background mouse_foreground highlight border color100 color101 color102 color103 color104 color105 color106 color107 color108 color109 color110 color111 color112 color113 color114 color115 )
-color_names=( black red green yellow blue magenta cyan white brblack brred brgreen bryellow brblue brmagenta brcyan brwhite )
+s_color_names=( black red green yellow blue magenta cyan white brblack brred brgreen bryellow brblue brmagenta brcyan brwhite )
 
 if [ -z "${DYNAMIC_COLORS_ROOT}" ]; then
   DYNAMIC_COLORS_ROOT="${HOME}/.dynamic-colors"
@@ -106,6 +104,7 @@ set_colors () {
 load_colorscheme () {
   [ ! -f "$COLORSCHEMES/$1.sh" ] && die "error: unknown colorscheme '$1'"
   . "$COLORSCHEMES/$1.sh" # source colorscheme file
+  colors=${!color@}
 }
 
 switch () {
@@ -133,6 +132,7 @@ audit () {
   fi
 }
 
+
 list () {
   [ ! -d "$COLORSCHEMES" ] && die "error: colorschemes directory '$COLORSCHEMES' doesn't exist"
   cd "$COLORSCHEMES"
@@ -155,7 +155,7 @@ create () {
   output="# $1\n"
   for color in ${colors[@]}; do
     output+="\n$color=\"\""
-    [[ $color == color* ]] && output+=" # ${color_names[${color#color}]}"
+    [[ $color == color* ]] && output+=" # ${s_color_names[${color#color}]}"
   done
   cd "$COLORSCHEMES"
   echo "$output" >> "$1.sh"
